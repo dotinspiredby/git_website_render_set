@@ -1,0 +1,78 @@
+{% extends "base2.html" %}
+{% load href_filename %}
+{% load static %}
+
+
+{% block title %} Presskit & Media · Katharina Meldre {% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'main_app/css/presskit.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="text"> Presskit & Media </h1>
+
+    <div class="container-fluid">
+        <div class="clearfix">
+            <div class="col-md-6 float-md-end mb-3 ms-md-3" id="collapsable">
+                {% for photo in presskit %}
+
+
+                <div class="thumb">
+                    <!--
+                    Idea by Andrei (https://dbmast.ru/)
+                    -->
+
+                    <!--
+                    <a href="{{ photo.file|href_filename }}">
+                        <img src="{{ photo.file }}" alt="{{photo.description}}">
+                    </a>
+                    -->
+                    <a href="{{ photo.pk|href_filename }}">
+                        <img src="{{ photo.link }}" alt="{{ photo.description }}">
+                    </a>
+
+                    <!--
+                    <div id="description"> {{photo.description}}
+                        <a href="{{ photo.file }}" download="">
+                            <img src="{% static 'pics/download.svg' %}" alt="download">
+                        </a>
+                    </div>
+                    -->
+
+                    <div id="description"> {{photo.description}}
+                        <a href="{{ photo.link }}" download="">
+                            <img src="{% static 'pics/download.svg' %}" alt="download">
+                        </a>
+                    </div>
+                </div>
+
+                <!--
+                <a href="#close" class="lightbox" id="{{ photo.file|filename }}">
+                   <img src="{{ photo.file }}">
+                </a>
+                -->
+
+                <a href="#close" class="lightbox" id="{{ photo.pk|filename }}">
+                   <img src="{{ photo.link }}">
+                </a>
+
+                {% endfor %}
+            </div>
+
+            <div class="col_6">
+
+                {% for video in videos %}
+                <h2 class="text"> {{ video.description }} </h2>
+
+                <iframe width="560" height="315" src="{{video.link}}"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

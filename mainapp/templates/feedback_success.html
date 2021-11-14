@@ -1,0 +1,14 @@
+{% extends "feedback_page.html" %}
+{% load static %}
+
+{% block title %} Feedback · Katharina Meldre {% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'main_app/css/feedback.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="alert alert-success" role="alert">
+  The message was sent successfully!
+</div>
+{% endblock %}

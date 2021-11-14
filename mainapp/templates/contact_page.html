@@ -1,0 +1,63 @@
+{% extends "base2.html" %}
+{% load static %}
+
+{% block title %} Contacts · Katharina Meldre {% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'main_app/css/contacts.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="text"> Contact Information </h1>
+        <div class="container-fluid">
+            <div class="clearfix">
+
+                <div class="col-md-6 float-md-end mb-3 ms-md-3">
+                    <h2 class="text"> For inquiries and suggestions please contact </h2>
+                        <div id="contact-stuff">
+                            {% for contact in contacts %}
+                                {{contact.contact_person}} {{contact.address}} {{contact.city}} {{contact.country}} {{contact.postal_code}}
+                            {% endfor %}
+
+                            {% for contact in press_contacts %}
+                            <div id="phone_data">
+                                <div id="telephone">
+                                {{contact.telephone}}
+                            </div>
+                            <div id="mobile"> {{contact.mobile}}
+                                <!--
+                                , {{contact.contact_person}}
+                                -->
+                            </div>
+                        </div>
+
+                            <div id="email_data"> or by e-mail addresses given below:
+                                <div id="email1"> {{contact.e_mail}}</div>
+                                <div id="email2"> {{contact.e_mail_optional}}</div>
+                            </div>
+                            {% endfor %}
+                            <a href="https://api.whatsapp.com/send/?phone=+79015149899">
+                                <img src="{% static 'pics/whatsapp.svg' %}" height="40" width="40">
+                            </a>
+                        </div>
+                    <div id="youtube">
+                        <script src="https://apis.google.com/js/platform.js"></script>
+                        <div class="g-ytsubscribe" data-channelid="UCxOFJ8QeORTGlaSQvq1Rv3w" data-layout="full" data-count="default">
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkatharinameldrecello%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                            width="340" height="500" style="border:none;overflow:hidden"
+                            scrolling="no" frameborder="0"
+                            allowfullscreen
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
+
+            </div>
+        </div>
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "base2.html" %}
+{% load static %}
+
+{% block title %} Repertoire · Katharina Meldre {% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'main_app/css/bio.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'main_app/css/repertoire.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <h1 class="text"> Repertoire </h1>
+
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="#solo">Solo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#piano_duo">With Piano</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#with_orchestra">With Orchestra</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#chamber">Chamber Works</a>
+      </li>
+    </ul>
+
+    <div id="text-stuff">
+        <div id="solo">
+            <h2 class="text"> Solo Works </h2>
+            {% for piece in solo_rep %}
+                <div id="piece_solo">
+                    {{piece.composer}} - {{piece.title}}
+                </div>
+            {% endfor %}
+        </div>
+
+        <div id="piano_duo">
+            <h2 class="text"> Works For Cello & Piano </h2>
+            {% for piece in piano_rep %}
+                <div id="piece_piano">
+
+                    {{piece.composer}} - {{piece.title}}
+                </div>
+            {% endfor %}
+        </div>
+
+        <div id="with_orchestra">
+            <h2 class="text"> Works For Cello & Orchestra </h2>
+            {% for piece in orch_rep %}
+
+                <div id="piece_orch">
+                    {{piece.composer}} - {{piece.title}}
+                </div>
+            {% endfor %}
+        </div>
+
+        <div id="chamber">
+            <h2 class="text"> Chamber Music Works </h2>
+            {% for piece in chamber_rep %}
+                <div id="piece_chamber">
+                    {{piece.composer}} - {{piece.title}}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    -->
+    <title>{% block title %} {% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'main_app/css/main.css' %}">
+
+    {% block extra_styles %} {% endblock %}
+    <script type="text/javascript" src="{% static 'jquery/jquery-3.6.0.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    {% block scripts %} {% endblock %}
+
+</head>
+<body>
+    <header>
+
+    </header>
+    <div id="wrapper">
+        <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-3" lang="eng">
+              <nav class="nav flex-column">
+
+                  <a class="nav-link active" aria-current="page" href="/">MAIN</a>
+                  <a class="nav-link" href="/bio/en">BIOGRAPHY</a>
+
+                  <a class="nav-link" href="/events/">EVENTS</a>
+                  <a class="nav-link" href="/media/">PRESS KIT & MEDIA</a>
+                  <a class="nav-link" href="/contacts/">CONTACTS</a>
+                  <a class="nav-link" href="/feedback/">FEEDBACK</a>
+              </nav>
+            </div>
+            <div class="col-8">
+
+                {% block content %} {% endblock %}
+
+            </div>
+
+
+
+          </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="container-fluid">
+          <div class="row">
+
+            <div class="col">
+                <a href="https://www.youtube.com/channel/UCxOFJ8QeORTGlaSQvq1Rv3w"><img src="{% static 'pics/youtube.svg' %}" alt="Katharina Meldre Youtube" height="40" width="40"></a>
+                <a href="https://www.instagram.com/katyameldrecello/"><img src="{% static 'pics/instagram.svg' %}" alt="@katyameldrecello" height="40" width="40"></a>
+                <a href="https://www.twitter.com/acellorando/"><img src="{% static 'pics/twitter.svg' %}" alt="Twitter" height="40" width="40"></a>
+                <a href="https://www.facebook.com/katharinameldrecello/"><img src="{% static 'pics/facebook.svg' %}" alt="Facebook" height="40" width="40"></a>
+            </div>
+            <div class="col">
+                <p>Copyright © 2021
+                    <a href="/"> Katharina Meldre </a>. Created by <a href="https://github.com/dotinspiredby">.inspiredby</a></p>
+            </div>
+          </div>
+        </div>
+    </footer>
+
+</body>
+</html>

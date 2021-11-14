@@ -1,0 +1,39 @@
+{% extends "base2.html" %}
+{% load static %}
+
+{% block title %} Events · Katharina Meldre {% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'main_app/css/events.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="text"> Concerts & Events </h1>
+
+    <div id="event_data">
+
+        {% for event in events %}
+
+            <div id="event">
+                <div class="card">
+                  <div class="card-header">
+                    <div id="date"> {{ event.date }} </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="card-title">
+                        <div id="place">{{ event.place }}</div>
+                    </div>
+                    <div class="card-text">
+                        <div id="repertoire">{{ event.repertoire }}</div>
+                        <div id="musicians">{{ event.collaborative_musicians }}</div>
+                    </div>
+                    <a href="{{ event.tickets_link }}" class="btn btn-secondary">Ticket Link</a>
+                  </div>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    </div>
+
+{% endblock %}

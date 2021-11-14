@@ -1,0 +1,25 @@
+#youtube {
+    margin-top: 2%;
+}
+
+h1 {
+    font: 40px 'Sitka Banner';
+}
+
+h2 {
+    font: 20px 'Sitka Banner';
+}
+
+#phone_data div {
+    font: bold 15px 'Segoe UI';
+}
+
+#email_data {
+    font: 20px 'Sitka Banner';
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#email_data div {
+    font: bold 15px 'Segoe UI';
+}

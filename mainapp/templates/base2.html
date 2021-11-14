@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %} {% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+    <link rel="shortcut icon" type="image/png" href="{% static 'pics/pngkey.com-base.png' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'main_app/css/base.css' %}">
+
+    <link href="https://getbootstrap.com/docs/3.4/examples/sticky-footer/sticky-footer.css" rel="stylesheet">
+
+    {% block extra_styles %} {% endblock %}
+    <script type="text/javascript" src="{% static 'jquery/jquery-3.6.0.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    {% block scripts %} {% endblock %}
+</head>
+
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand">KATHARINA MELDRE, CELLIST</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">MAIN</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/bio/english">BIOGRAPHY</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/repertoire/">REPERTOIRE</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/events/">EVENTS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/media/">PRESS KIT & MEDIA</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/contacts/">CONTACTS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/feedback/">FEEDBACK</a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        {% block content %} {% endblock %}
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div id="links">
+            <a href="https://www.youtube.com/channel/UCxOFJ8QeORTGlaSQvq1Rv3w" target="_blank"><img src="{% static 'pics/youtube.svg' %}" alt="Katharina Meldre Youtube" height="40" width="40"></a>
+            <a href="https://www.instagram.com/katyameldrecello/" target="_blank"><img src="{% static 'pics/instagram.svg' %}" alt="@katyameldrecello" height="40" width="40"></a>
+            <a href="https://www.twitter.com/acellorando/" target="_blank"><img src="{% static 'pics/twitter.svg' %}" alt="Twitter" height="40" width="40"></a>
+            <a href="https://www.facebook.com/katharinameldrecello/" target="_blank"><img src="{% static 'pics/facebook.svg' %}" alt="Facebook" height="40" width="40"></a>
+            <iframe allowtransparency="true" scrolling="no" frameborder="no" src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Fkacellorando&color=black_white&size=40"
+                    style="width: 40px; height: 40px;"></iframe>
+        </div>
+
+
+        <div class="signature">
+            <p>Copyright © 2021
+                <a href="/"> Katharina Meldre </a>. Created by <a href="https://github.com/dotinspiredby" target="_blank">.inspiredby</a></p>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

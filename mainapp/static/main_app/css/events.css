@@ -1,0 +1,17 @@
+#event_data {
+    height: 50vh;
+    overflow-y: scroll;
+    font: 20px 'Sitka Banner';
+}
+
+#event {
+    margin-top: 2%;
+}
+
+#date {
+    font-weight: bold;
+}
+
+#place {
+    font-style: italic;
+}

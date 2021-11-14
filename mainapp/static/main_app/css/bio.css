@@ -1,0 +1,20 @@
+.bio_box a {
+    font: 20px 'Sitka Banner';
+}
+
+
+.nav-link {
+    color: #311919;
+}
+
+#bio_box {
+    height: 40vh;
+    overflow-y: scroll;
+}
+
+#text-stuff {
+    margin-top: 20px;
+    font: 20px 'Sitka Banner';
+    height: 50vh;
+    overflow-y: scroll;
+}

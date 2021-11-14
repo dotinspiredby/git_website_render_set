@@ -1,0 +1,49 @@
+{% extends "base2.html" %}
+{% load static %}
+{% load href_filename %}
+
+{% block title %} Biography · Katharina Meldre {% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'main_app/css/bio.css' %}">
+
+{% endblock %}
+
+{% block content %}
+    <h1 class="text"> Biography
+    </h1>
+
+    <ul class="nav nav-tabs">
+        {% for bio in bios %}
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{{ bio.language_id|href_bio }}">{{ bio.language_id }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div id="text-stuff">
+        {{ sel_bio.text }}
+    </div>
+
+
+<!--
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/bio/en">English</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/bio/de">Deutsch</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/bio/ru">Русский</a>
+      </li>
+    </ul>
+
+    <div id="text-stuff">
+        {% for text in bio %}
+            {{text.bio}}
+        {% endfor %}
+    </div>
+-->
+
+{% endblock %}
