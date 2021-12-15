@@ -1,10 +1,51 @@
-footer {
-  height: 15vh !important;
+@font-face {
+    font-family: 'foglihtenregular';
+    src: url('webfonts/header_name/foglihten-068-webfont.woff2') format('woff2'),
+         url('webfonts/header_name/foglihten-068-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-container-fluid {
-    width: 100%
+@font-face {
+    font-family: 'cormorant_garamondsemibold';
+    src: url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.eot');
+    src: url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.woff2') format('woff2'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.woff') format('woff'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.ttf') format('truetype'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.svg#cormorant_garamondsemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+ #name {
+    font-family: 'foglihtenregular';
+ }
+
+ header, nav {
+
+ }
+
+nav {
+    font-family: 'cormorant_garamondsemibold';
+    animation: opacity;
+    animation-duration: 2s;
+}
+
+footer {
+  height: 15vh !important;
+  font-family: 'cormorant_garamondsemibold';
+  animation: opacity;
+  animation-duration: 2s;
+}
+
+#content {
+    width: 100%;
+
     flex-wrap: wrap;
+    animation: opacity;
+    animation-duration: 3s;
 }
 
 col-5, col-6 {
@@ -37,6 +78,7 @@ col-5, col-6 {
 }
 
 .signature a {
+    color: black;
     margin-top: 1%;
     text-align: center;
     font-size: 12px;
@@ -50,6 +92,23 @@ col-5, col-6 {
 }
 
 h1 {
-    font: 40px 'Sitka Banner';
+    font: 40px 'foglihtenregular' !important;
     position: relative;
+    animation: opacity;
+    animation-duration: 2s;
+}
+
+.btn-secondary {
+    color: black;
+    background-color: rgba(0,0,0,0.05);
+    border-color: #6c757d;
+}
+
+@keyframes opacity {
+    from {
+    opacity: 0;
+  }
+    to {
+    opacity: 100%;
+  }
 }

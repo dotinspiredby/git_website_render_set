@@ -10,9 +10,10 @@
 
 
 {% block content %}
+<div id="rep_content">
     <h1 class="text"> Repertoire </h1>
 
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs" id="pieces">
       <li class="nav-item">
         <a class="nav-link" aria-current="page" href="#solo">Solo</a>
       </li>
@@ -66,4 +67,5 @@
             {% endfor %}
         </div>
     </div>
+</div>
 {% endblock %}

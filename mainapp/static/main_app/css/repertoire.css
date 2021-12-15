@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'cormorant_garamondsemibold';
+    src: url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.eot');
+    src: url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.woff2') format('woff2'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.woff') format('woff'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.ttf') format('truetype'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.svg#cormorant_garamondsemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+#pieces .nav-link {
+    color: black;
+    font-family: 'cormorant_garamondsemibold';
+}
+
+#rep_content {
+    height: 75vh !important;
+    overflow-y: scroll;
+}
+

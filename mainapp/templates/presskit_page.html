@@ -28,6 +28,7 @@
                         <img src="{{ photo.file }}" alt="{{photo.description}}">
                     </a>
                     -->
+                    <div class="pic">
                     <a href="{{ photo.pk|href_filename }}">
                         <img src="{{ photo.link }}" alt="{{ photo.description }}">
                     </a>
@@ -40,10 +41,11 @@
                     </div>
                     -->
 
-                    <div id="description"> {{photo.description}}
+                    <div class="description"> {{photo.description}}
                         <a href="{{ photo.link }}" download="">
                             <img src="{% static 'pics/download.svg' %}" alt="download">
                         </a>
+                    </div>
                     </div>
                 </div>
 
@@ -60,9 +62,10 @@
                 {% endfor %}
             </div>
 
-            <div class="col_6">
+            <div class="videos">
 
                 {% for video in videos %}
+                <div class="video_iframe">
                 <h2 class="text"> {{ video.description }} </h2>
 
                 <iframe width="560" height="315" src="{{video.link}}"
@@ -70,9 +73,11 @@
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                 </iframe>
+                </div>
+                <br>
                 {% endfor %}
             </div>
         </div>
-    </div>
+</div>
 
 {% endblock %}

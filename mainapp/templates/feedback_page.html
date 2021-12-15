@@ -8,7 +8,9 @@
 {% endblock %}
 
 {% block content %}
+<div id="form_content">
     <h1 class="text">Feedback Form</h1>
+    <h2>Send your message using the following form:</h2>
     <form method="post" action="/feedback/">
         {% csrf_token %}
       <div class="form-group">
@@ -27,5 +29,5 @@
 
       <button type="submit" class="form-control btn btn-secondary">Send</button>
     </form>
-
+</div>
 {% endblock %}

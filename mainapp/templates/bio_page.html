@@ -10,10 +10,10 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="text"> Biography
-    </h1>
+<div id="bio_content">
+    <h1 class="text"> Biography</h1>
 
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs" id="bios">
         {% for bio in bios %}
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="{{ bio.language_id|href_bio }}">{{ bio.language_id }}</a>
@@ -22,9 +22,12 @@
     </ul>
 
     <div id="text-stuff">
+        <div class="col-md-5 float-md-end mb-3 ms-md-3" id="collapsable">
+            <img src="{% static 'pics/image.jpg' %}" alt="pic">
+        </div>
         {{ sel_bio.text }}
     </div>
-
+</div>
 
 <!--
     <ul class="nav nav-tabs">

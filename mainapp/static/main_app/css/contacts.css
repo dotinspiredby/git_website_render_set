@@ -1,25 +1,75 @@
+@font-face {
+    font-family: 'cormorant_garamondlight';
+    src: url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.eot');
+    src: url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.woff2') format('woff2'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.woff') format('woff'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.ttf') format('truetype'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.svg#cormorant_garamondlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'cormorant_garamondsemibold';
+    src: url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.eot');
+    src: url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.woff2') format('woff2'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.woff') format('woff'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.ttf') format('truetype'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.svg#cormorant_garamondsemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#contacts {
+    animation: slide-left;
+    animation-duration: 2s;
+}
+
 #youtube {
     margin-top: 2%;
 }
 
-h1 {
-    font: 40px 'Sitka Banner';
-}
 
 h2 {
-    font: 20px 'Sitka Banner';
+    font: 20px 'cormorant_garamondlight';
 }
 
 #phone_data div {
-    font: bold 15px 'Segoe UI';
+    font: bold 15px 'cormorant_garamondsemibold';
 }
 
 #email_data {
-    font: 20px 'Sitka Banner';
+    font: 20px 'cormorant_garamondlight';
     margin-top: 2%;
     margin-bottom: 2%;
 }
 
 #email_data div {
-    font: bold 15px 'Segoe UI';
+    font: bold 15px 'cormorant_garamondsemibold';
+}
+
+.clearfix iframe {
+    animation: slide-right;
+    animation-duration: 2s;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(500%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-500%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }

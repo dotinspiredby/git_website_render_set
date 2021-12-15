@@ -12,7 +12,7 @@
         <div class="container-fluid">
             <div class="clearfix">
 
-                <div class="col-md-6 float-md-end mb-3 ms-md-3">
+                <div class="col-md-6 float-md-end mb-3 ms-md-3" id="contacts">
                     <h2 class="text"> For inquiries and suggestions please contact </h2>
                         <div id="contact-stuff">
                             {% for contact in contacts %}
@@ -32,14 +32,17 @@
                         </div>
 
                             <div id="email_data"> or by e-mail addresses given below:
-                                <div id="email1"> {{contact.e_mail}}</div>
+
+                                <div id="email1"> <br> {{contact.e_mail}}</div>
                                 <div id="email2"> {{contact.e_mail_optional}}</div>
                             </div>
                             {% endfor %}
                             <a href="https://api.whatsapp.com/send/?phone=+79015149899">
                                 <img src="{% static 'pics/whatsapp.svg' %}" height="40" width="40">
                             </a>
+
                         </div>
+                    <br>
                     <div id="youtube">
                         <script src="https://apis.google.com/js/platform.js"></script>
                         <div class="g-ytsubscribe" data-channelid="UCxOFJ8QeORTGlaSQvq1Rv3w" data-layout="full" data-count="default">

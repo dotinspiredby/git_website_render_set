@@ -1,17 +1,69 @@
+@font-face {
+    font-family: 'foglihtenregular';
+    src: url('webfonts/header_name/foglihten-068-webfont.woff2') format('woff2'),
+         url('webfonts/header_name/foglihten-068-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cormorant_garamondlight';
+    src: url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.eot');
+    src: url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.woff2') format('woff2'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.woff') format('woff'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.ttf') format('truetype'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.svg#cormorant_garamondlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'cormorant_garamondsemibold';
+    src: url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.eot');
+    src: url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.woff2') format('woff2'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.woff') format('woff'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.ttf') format('truetype'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.svg#cormorant_garamondsemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 #event_data {
-    height: 50vh;
+    height: 75vh;
     overflow-y: scroll;
-    font: 20px 'Sitka Banner';
+    font: 20px 'cormorant_garamondlight';
+
 }
 
 #event {
     margin-top: 2%;
+    animation: slide-right;
+    animation-duration: 2s;
 }
 
 #date {
-    font-weight: bold;
+    font-family: 'cormorant_garamondsemibold';
 }
 
 #place {
-    font-style: italic;
+    font-family: 'cormorant_garamondsemibold';
+}
+
+.btn-secondary {
+    color: black;
+    background-color: rgba(0,0,0,0.05);
+    border-color: #6c757d;
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-500%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }

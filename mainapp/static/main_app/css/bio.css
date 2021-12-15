@@ -1,20 +1,67 @@
-.bio_box a {
-    font: 20px 'Sitka Banner';
+@font-face {
+    font-family: 'cormorant_garamondlight';
+    src: url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.eot');
+    src: url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.woff2') format('woff2'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.woff') format('woff'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.ttf') format('truetype'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_light/CormorantGaramond-Light-webfont.svg#cormorant_garamondlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
-
-.nav-link {
-    color: #311919;
+@font-face {
+    font-family: 'cormorant_garamondsemibold';
+    src: url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.eot');
+    src: url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.woff2') format('woff2'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.woff') format('woff'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.ttf') format('truetype'),
+         url('webfonts/text_font/cormorant/cormorantgaramond_semibold/CormorantGaramond-SemiBold-webfont.svg#cormorant_garamondsemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
-#bio_box {
-    height: 40vh;
+#bio_content {
+    height: 75vh !important;
     overflow-y: scroll;
+}
+
+
+.bio_box a {
+    font: 20px 'cormorant_garamondlight';
+}
+
+
+#bios .nav-link {
+    color: black;
+    font-family: 'cormorant_garamondsemibold';
 }
 
 #text-stuff {
     margin-top: 20px;
-    font: 20px 'Sitka Banner';
-    height: 50vh;
+    font: 20px 'cormorant_garamondlight';
+
     overflow-y: scroll;
+    animation: slide-up;
+    animation-duration: 2s;
+}
+
+#collapsable img {
+    max-width: 40vmax;
+    float: right;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(500%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
