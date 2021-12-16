@@ -59,7 +59,8 @@ a img {
 .lightbox img {
 
   height: inherit;
-  max-height: 95%;
+  max-width: 95%;
+  object-fit: scale-down;
   margin: 1% 0 0 0;
   opacity: 0;
   text-align: center;
@@ -70,7 +71,7 @@ a img {
   -webkit-transition: opacity 500ms ease-in;
   -moz-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
-  object-fit: scale-down;
+
 }
 
 .pic img{
