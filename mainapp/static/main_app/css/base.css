@@ -113,3 +113,8 @@ h1 {
     opacity: 100%;
   }
 }
+
+#links img {
+    height: 40px !important;
+    width: 40px !important;
+}
