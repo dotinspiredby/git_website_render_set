@@ -42,7 +42,8 @@ footer {
 
 #content {
     width: 100%;
-
+    height: 80vh !important;
+    overflow-y: scroll;
     flex-wrap: wrap;
     animation: opacity;
     animation-duration: 3s;

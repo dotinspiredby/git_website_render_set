@@ -42,8 +42,6 @@
 #text-stuff {
     margin-top: 20px;
     font: 20px 'cormorant_garamondlight';
-
-    overflow-y: scroll;
     animation: slide-up;
     animation-duration: 2s;
 }
