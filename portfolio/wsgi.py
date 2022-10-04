@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/2.0/howto/deployment/wsgi/
 import os
 import environ
 from django.core.wsgi import get_wsgi_application
-from django.contrib.auth.models import User
 
 env = environ.Env()
 # reading .env file
@@ -20,6 +19,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "portfolio.settings")
 
 application = get_wsgi_application()
 
+from django.contrib.auth.models import User
 users = User.objects.all()
 if not users:
     User.objects.create_superuser(username=env("ADMIN"), email=env("ADMIN_EMAIL"),
