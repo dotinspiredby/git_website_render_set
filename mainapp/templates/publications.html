@@ -1,0 +1,72 @@
+{% extends "base2.html" %}
+{% load href_filename %}
+{% load static %}
+
+{% block title %} Events · Katharina Meldre {% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'main_app/css/events.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'main_app/css/publications.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'main_app/css/presskit.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div id="event_data">
+    <h1 class="text"> Publications </h1>
+
+    {% for publication in publications %}
+        <div id="publications">
+            <div class="card">
+                <div class="card-header">
+                    <div id="date"> {{ publication.date }} </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">
+                        <div id="title">{{ publication.title }}</div>
+                    </div>
+
+                    {% if publication.photo_preview %}
+                    <div class="thumb">
+                    <!--
+                    Idea by Andrei (https://dbmast.ru/)
+                    -->
+
+                    <div class="pic">
+                    <a href="{{ publication.pk|href_filename }}">
+                        <img src="{{ publication.photo_preview }}" alt="{{ publication.title }}">
+                    </a>
+
+                    <div class="description">
+                        <a href="{{ publication.photo_preview }}" download="">
+                            <img src="{% static 'pics/download.svg' %}" alt="download">
+                        </a>
+                    </div>
+                    </div>
+                    </div>
+
+                    <a href="#close" class="lightbox" id="{{ publication.pk|filename }}">
+                        <img src="{{ publication.photo_preview }}">
+                    </a>
+                    {% else %}
+                    <br>
+
+                    {% endif %}
+
+                    <div class="card-text">
+                        <div id="text">{{ publication.description }}</div>
+                    </div>
+
+                    <br>
+
+                    <a href="{{ publication.link }}" class="btn btn-secondary">Link</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
+
+

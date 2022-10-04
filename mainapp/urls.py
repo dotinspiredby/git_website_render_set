@@ -15,5 +15,6 @@ urlpatterns = [
     path('events/', manager.get_events),
     path('contacts/', manager.get_contacts),
     path('media/', manager.get_media),
-    path('feedback/', manager.feedback)
+    path('feedback/', manager.feedback),
+    path('publications/', manager.get_publications)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

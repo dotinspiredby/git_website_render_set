@@ -6,21 +6,6 @@ class BioLang(models.Model):
     text = models.TextField()
     objects = models.Manager()
 
-
-# class BioEN(models.Model):
-#     bio = models.TextField()
-#     objects = models.Manager()
-#
-#
-# class BioDE(models.Model):
-#     bio = models.TextField()
-#     objects = models.Manager()
-#
-#
-# class BioRU(models.Model):
-#     bio = models.TextField()
-#     objects = models.Manager()
-    
     
 class RepertoirePieceOrchestra(models.Model):
     composer = models.CharField(max_length=100)
@@ -64,15 +49,30 @@ class ContactInfoNoAddress(models.Model):
     objects = models.Manager()
 
 
-class PhotoFile(models.Model):
+class PhotoFileLink(models.Model):
     # file = models.ImageField(upload_to='photos/')
-    # Heroku Issue
+    # For GoogleDrive links (slow)
     description = models.CharField(max_length=400)
     link = models.CharField(max_length=500)
     objects = models.Manager()
 
 
+class PhotoFile(models.Model):
+    file = models.ImageField(upload_to='photos/')
+    description = models.CharField(max_length=400)
+    objects = models.Manager()
+
+
 class VideoLink(models.Model):
+    description = models.TextField()
+    link = models.TextField()
+    objects = models.Manager()
+
+
+class Publication(models.Model):
+    title = models.CharField(max_length=400)
+    date = models.DateField()
+    photo_preview = models.CharField(max_length=500, blank=True)
     description = models.TextField()
     link = models.TextField()
     objects = models.Manager()

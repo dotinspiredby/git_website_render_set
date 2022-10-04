@@ -5,8 +5,8 @@ from django.views import View
 from .forms import FeedbackForm
 from portfolio.settings import EMAIL_HOST_USER, RECIPIENTS_EMAIL
 # from info_db.models import BioDE, BioEN, BioRU
-from info_db.models import BioLang, ContactInfo, ContactInfoNoAddress, PhotoFile, VideoLink, \
-    RepertoirePieceSolo, RepertoirePieceWPiano, RepertoirePieceOrchestra, RepertoirePieceChamber
+from info_db.models import BioLang, ContactInfo, ContactInfoNoAddress, PhotoFile, PhotoFileLink, VideoLink, \
+    RepertoirePieceSolo, RepertoirePieceWPiano, RepertoirePieceOrchestra, RepertoirePieceChamber, Publication
 from django.core.exceptions import ObjectDoesNotExist
 from event_db.models import EventModel
 import json
@@ -28,20 +28,6 @@ class PageManager(View):
         return render(request, "bio_page.html", context={'bios': bios,
                                                          'sel_bio': bio})
 
-    # def get_bio(self, request):
-    #     language_id = str(request.path).split('/')[-1]
-    #     if language_id == 'en':
-    #         bio = BioEN.objects.all()
-    #         return render(request, 'bio_page.html', context={'bio': bio, 'lang': "Biography"})
-    #     elif language_id == 'de':
-    #         bio = BioDE.objects.all()
-    #         return render(request, 'bio_page.html', context={'bio': bio, 'lang': "Biographie"})
-    #     elif language_id == 'ru':
-    #         bio = BioRU.objects.all()
-    #         return render(request, 'bio_page.html', context={'bio': bio, 'lang': "Биография"})
-    #     else:
-    #         return HttpResponse(status=404)
-
     def get_repertoire(self, request):
         solo = RepertoirePieceSolo.objects.order_by('composer')
         piano = RepertoirePieceWPiano.objects.order_by('composer')
@@ -58,8 +44,10 @@ class PageManager(View):
 
     def get_media(self, request):
         photos = PhotoFile.objects.all()
+        photo_links = PhotoFileLink.objects.all()
         videos = VideoLink.objects.all()
-        return render(request, 'presskit_page.html', context={'presskit': photos,
+        return render(request, 'presskit_page.html', context={'presskit': photo_links,
+                                                              'pics': photos,
                                                               'videos': videos})
 
     def get_contacts(self, request):
@@ -92,3 +80,8 @@ class PageManager(View):
             else:
                 return HttpResponse('Wrong request')
         return render(request, "feedback_page.html")
+
+    def get_publications(self, request):
+        publications = Publication.objects.order_by('-date')
+        return render(request, "publications.html", context={'publications': publications})
+

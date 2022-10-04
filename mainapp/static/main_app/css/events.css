@@ -31,6 +31,9 @@
     font-style: normal;
 }
 
+#text {
+    font: 20px 'cormorant_garamondlight';
+}
 
 #event_data {
     height: 75vh;
@@ -49,7 +52,7 @@
     font-family: 'cormorant_garamondsemibold';
 }
 
-#place {
+#place, #title {
     font-family: 'cormorant_garamondsemibold';
 }
 
