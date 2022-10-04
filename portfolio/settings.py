@@ -148,7 +148,7 @@ if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
     # and creating unique names for each version so they can safely be cached forever.
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'mainapp/static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'mainapp/static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'presskit')
 
